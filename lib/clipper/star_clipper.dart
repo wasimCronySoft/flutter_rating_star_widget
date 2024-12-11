@@ -2,6 +2,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 
+// Custom clipper to create a star shape
 class StarClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
@@ -9,10 +10,11 @@ class StarClipper extends CustomClipper<Path> {
     final center = Offset(size.width / 2, size.height / 2);
     final outerRadius = size.width / 2;
     final innerRadius = outerRadius / 2.5;
-    const angle = pi / 5;
+    const angle = pi / 5; // Angle between points in the star shape
 
+    // Draw star shape path
     for (int i = 0; i < 10; i++) {
-      final isOuter = i.isEven; // Alternate between outer and inner points
+      final isOuter = i.isEven;
       final radius = isOuter ? outerRadius : innerRadius;
       final x = center.dx + radius * cos(i * angle - pi / 2);
       final y = center.dy + radius * sin(i * angle - pi / 2);

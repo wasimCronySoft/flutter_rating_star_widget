@@ -76,7 +76,13 @@ class _RatingStarHomeState extends State<RatingStarHome> {
       ),
       body: Center(
         child: RatingStarWidget(
-          title: 'Rate this item', // Displayed rating question text
+          titleList: const [
+            "Very Poor",
+            "Poor",
+            "Average",
+            "Good",
+            "Very Good"
+          ], // Displayed rating question text
           initialRating: 3.0, // Pre-select an initial rating
           onRatingSelected: (rating) {
             print('Selected Rating: $rating'); // Handle the selected rating
